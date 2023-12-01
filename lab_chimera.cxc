@@ -1,0 +1,42 @@
+cd /Users/steineggerlab/Desktop/lab/source/lab_231201
+open example/P0DTD1_rank_001.pdb
+
+## Molecular Display
+color bfactor palette alphafold
+surface color white transparency 60
+hide surface
+
+color #1/A hotpink
+color #1/B steelblue
+color :ser yellow
+color #1/A hotpink; color #1/B steelblue
+show atoms; style stick
+
+hide cartoon; show atom
+color byatom
+style ball
+style sphere
+
+## Graphics
+rainbow palette Set3-9
+lighting simple
+
+lighting flat
+
+graphics silhouettes off
+
+graphics silhouettes on width 2.5
+
+## Superpose
+cd P0DTD1_P0DTD1_3dd51
+open *.pdb
+
+color /A hotpink
+color /B  dark orchid
+
+hide #2-5 cartoons
+open ../example/6lu7.pdb1
+color #6/A tomato; color #6.2 steelblue
+
+## PAE loader
+alphafold pae #5 file ./P0DTD1_P0DTD1_3dd51_scores_rank_005_alphafold2_multimer_v3_model_4_seed_000.json palette paegreen
